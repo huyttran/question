@@ -4,36 +4,46 @@
   </div>
 
   <!--Radio group-->
-  <div>
-    <input name="group100" type="radio" id="radio100" (click)="checkAnswer('a')">
-    <label for="radio100">{{questionModel.answer.a}}</label>
-    <!-- <i class="fa fa-address-book" aria-hidden="true"></i> -->
-    <span *ngIf="show; else elseBlock">
+  <div *ngFor="let answer of questionModel.answers; let i = index ">
+    <input  name="group100" type="radio" [attr.id]="i" (click)="checkAnswer(answer)">
+    <label  [attr.for]="i">{{answer.key +". "+ answer.answer }}</label>
+    <span *ngIf="showA === 'show' && currentAnswer === answer  ">
       <i class="far fa-check-circle"></i>
     </span>
-    <ng-template #elseBlock>
+    <span *ngIf="showA === 'hide' && currentAnswer === answer ">
       <i class="far fa-times-circle"></i>
-    </ng-template>
-
+    </span>
   </div>
 
-  <div>
-    <input name="group100" type="radio" id="radio101" (click)="checkAnswer('b')">
+  <!-- <div>
+    <input name="group100" type="radio" id="radio101" (click)="checkAnswerA('b')">
     <label for="radio101">{{questionModel.answer.b}}</label>
-    <span *ngIf="show; else elseBlock">
+    <span *ngIf="showA === 'show' && currentAnswer === 'b'">
       <i class="far fa-check-circle"></i>
     </span>
-    <ng-template #elseBlock>
+    <span *ngIf="showA === 'hide' && currentAnswer === 'b'">
       <i class="far fa-times-circle"></i>
-    </ng-template>
+    </span>
   </div>
 
   <div>
-    <input name="group100" type="radio" id="radio102" (click)="checkAnswer('c')">
+    <input name="group100" type="radio" id="radio102" (click)="checkAnswerA('c')">
     <label for="radio102">{{questionModel.answer.c}}</label>
+    <span *ngIf="showA === 'show' && currentAnswer === 'c'">
+      <i class="far fa-check-circle"></i>
+    </span>
+    <span *ngIf="showA === 'hide' && currentAnswer === 'c'">
+      <i class="far fa-times-circle"></i>
+    </span>
   </div>
   <div>
-    <input name="group100" type="radio" id="radio103" (click)="checkAnswer('d')">
+    <input name="group100" type="radio" id="radio103" (click)="checkAnswerA('d')">
     <label for="radio103">{{questionModel.answer.d}}</label>
-  </div>
+    <span *ngIf="showA === 'show' && currentAnswer === 'd'">
+      <i class="far fa-check-circle"></i>
+    </span>
+    <span *ngIf="showA === 'hide' && currentAnswer === 'd'">
+      <i class="far fa-times-circle"></i>
+    </span>
+  </div> -->
 </div>

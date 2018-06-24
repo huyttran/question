@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Question } from './question';
 
 @Component({
   selector: 'app-root',
@@ -9,22 +10,61 @@ export class AppComponent {
   title = 'app';
   questionModel = {
     question: `When do you .... college?`,
-    answer: {
-      a: `Option 1`,
-      b: `Option 2`,
-      c: `Option 3`,
-      d: `Option 4`,
-    },
+    answers: [
+      {
+        key: 'a',
+        answer: `Option 1`,
+      },
+      {
+        key: 'b',
+        answer: `Option 2`,
+      },
+      {
+        key: 'c',
+        answer: `Option 3`,
+      },
+      {
+        key: 'd',
+        answer: `Option 4`,
+      }
+    ],
     rightAnswer: `a`
   };
-  show = null;
-  checkAnswer(answer) {
-    if (answer === this.questionModel.rightAnswer) {
-      console.log('right');
-      this.show = true;
+
+  questionModel2: Question[] = [
+    { id: 11, name: 'Mr. Nice' },
+    { id: 12, name: 'Narco' },
+    { id: 13, name: 'Bombasto' },
+    { id: 14, name: 'Celeritas' },
+    { id: 15, name: 'Magneta' },
+    { id: 16, name: 'RubberMan' },
+    { id: 17, name: 'Dynama' },
+    { id: 18, name: 'Dr IQ' },
+    { id: 19, name: 'Magma' },
+    { id: 20, name: 'Tornado' }
+  ];
+  showA = 'deafult';
+  showB = 'deafult';
+  currentAnswer;
+  checkAnswer(answer): void {
+    this.currentAnswer = answer;
+    console.log(this.currentAnswer);
+    if (answer.key === this.questionModel.rightAnswer) {
+      // console.log('right');
+      this.showA = 'show';
     } else {
-      console.log('wrong');
-      this.show = false;
+      // console.log('wrong');
+      this.showA = 'hide';
     }
   }
+
+  // checkAnswerB(answer) {
+  //   if (answer === this.questionModel.rightAnswer) {
+  //     console.log('right');
+  //     this.showB = 'show';
+  //   } else {
+  //     console.log('wrong');
+  //     this.showB = 'hide';
+  //   }
+  // }
 }
