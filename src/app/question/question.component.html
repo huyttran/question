@@ -1,0 +1,18 @@
+<div>
+  <div>
+    {{question.question}}
+  </div>
+  <!--Radio group-->
+  <div *ngFor="let answer of question.answers; let i = index">
+    <input [attr.name]="'group' + question.questionId " type="radio" [attr.id]="question.questionId + i" (click)="validateAnswer(answer)">
+    <label [attr.for]="question.questionId + i">{{answer.key +". "+ answer.answer }}</label>
+    
+    <span *ngIf="userAnswer === answer && result === resultStatus.CORRECT && isShowResultImmediately || answer.key === question.rightAnswer && isShowCorrectAnswer" >
+      <i class="far fa-check-circle"></i>
+    </span>
+    <span *ngIf="userAnswer === answer && result === resultStatus.INCORRECT && isShowResultImmediately">
+      <i class="far fa-times-circle"></i>
+    </span>
+
+  </div>
+</div>
