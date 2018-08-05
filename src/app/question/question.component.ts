@@ -8,7 +8,7 @@ import { Question } from '../models/question/question';
 })
 export class QuestionComponent implements OnInit {
   @Input() question: Question;
-  @Input() isShowResultImmediately: boolean = false;
+  @Input() isShowResultImmediately = false;
   @Input() isShowResult: boolean;
   @Input() isShowCorrectAnswer: boolean;
 

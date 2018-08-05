@@ -1,4 +1,4 @@
-<div class="text-left">
+<!-- <div class="text-left">
   <span>Option method:</span>
   <br />
   <input name="groupmethod" type="radio" id="radiogroupmethod1" (click)="checkMethod(true)">
@@ -8,16 +8,44 @@
   <label for="radiogroupmethod2">Finish all</label>
   <br />
   <button type="button" class="btn btn-primary waves-light" mdbWavesEffect (click)="radomQuestion()">Radom Question</button>
-
-</div>
-<div class="center">
-  <!-- autoplay -->
-  <!-- <video id="video" width="740" height="480" preload="auto" crossorigin controls>
+</div> -->
+<!-- <div class="center"> -->
+<!-- autoplay -->
+<!-- <video id="video" width="740" height="480" preload="auto" crossorigin controls>
     <source src="../assets/video/video.mp4" type="video/mp4"> Your browser does not support the video tag.
   </video> -->
-  <button type="button" class="btn btn-primary waves-light" mdbWavesEffect (click)="submit()">Submit</button>
+<!-- <button type="button" class="btn btn-primary waves-light" mdbWavesEffect (click)="submit()">Submit</button>
   <app-question *ngFor="let question1 of questions; let i = index" [question]="question1" [isShowResultImmediately]="isAnswerImmediately"
     [isShowCorrectAnswer]="isShowCorrectAnswer" (resultRespone)="catchAnswerFromChild($event)">
   </app-question>
 
+</div> -->
+<div class="content row">
+  <!-- <div class="text-left">
+    <span>Option method:</span>
+    <br />
+    <input name="groupmethod" type="radio" id="radiogroupmethod1" (click)="checkMethod(true)">
+    <label for="radiogroupmethod1">Show answer imediately</label>
+    <br />
+    <input name="groupmethod" type="radio" id="radiogroupmethod2" (click)="checkMethod(false)" checked>
+    <label for="radiogroupmethod2">Finish all</label>
+    <br />
+    <button type="button" class="btn btn-primary waves-light" mdbWavesEffect (click)="radomQuestion()">Radom Question</button>
+  </div> -->
+
+  <div class="center col-md-9">
+      <router-outlet></router-outlet>
+    <div class="video-container">
+      <video id="video" width="740" height="480" preload="auto" crossorigin controls>
+        <source src="" type="video/mp4"> Your browser does not support the video tag.
+      </video>
+    </div>
+    <button type="button" class="btn btn-primary waves-light" mdbWavesEffect (click)="submit()">Submit</button>
+    <app-question *ngFor="let question1 of questions; let i = index" [question]="question1" [isShowResultImmediately]="isAnswerImmediately"
+      [isShowCorrectAnswer]="isShowCorrectAnswer" (resultRespone)="catchAnswerFromChild($event)">
+    </app-question>
+  </div>
+  <div class="sidebar col-md-3">
+    <app-lesson-list></app-lesson-list>
+  </div>
 </div>

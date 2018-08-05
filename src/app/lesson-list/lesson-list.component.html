@@ -1,0 +1,37 @@
+<div class="list-container">
+  <div class="lesson-list-header">
+    Menu
+  </div>
+  <div class="lesson-list-body">
+    <!-- list item component- separate later on -->
+    <ul>
+      <li *ngFor="let lesson of lessons" class="item" [class.selected]="lesson === selectedLesson" (click)="onSelect(lesson)">
+        <a routerLink="/lesson/{{lesson.id}}">
+          lesson {{ lesson.id}} : {{lesson.lessonName}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- Design -->
+
+<!--
+|---------------------------------------------------------------|
+|                       Header                                  |
+|---------------------------------------------------------------|
+|                     Lesson1: abc                              |
+|                     Lesson2: abc                              |
+|                     Lesson3: abc                              |
+|                     Lesson4: abc                              |
+|                     Lesson5: abc                              |
+|                     Lesson6: abc                              |
+|                     Lesson7: abc                              |
+|                     Lesson8: abc                              |
+|                     Lesson9: abc                              |
+|                     Lesson10: abc                             |
+|                     Lesson11: abc                             |
+|                     Lesson12: abc                             |
+-----------------------------------------------------------------
+ -->

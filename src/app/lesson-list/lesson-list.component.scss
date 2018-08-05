@@ -1,0 +1,77 @@
+.list-container {
+  ul {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 90vh;
+  }
+  ul li {
+    padding: 10px 0px;
+    &:hover {
+      cursor: pointer;
+      background-color: #607D8B;
+      a {
+        color: white;
+      }
+    }
+  }
+  ul li {
+    list-style-type: none;
+  }
+  ul li a {
+    display: block;
+    color: #4B515D;
+    font-weight: 300;
+  }
+  .lesson-list-header {
+    background-color: #607D8B;
+    text-align: center;
+    padding: 10px 0px;
+    margin-bottom: 1px;
+    color: white;
+    font-weight: 500;
+  }
+  .lesson-list-body {
+    text-align: center;
+    .item {
+      color: black;
+    }
+  }
+}
+
+.selected {
+  background-color: #CFD8DC;
+}
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 10px;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: red;
+}
